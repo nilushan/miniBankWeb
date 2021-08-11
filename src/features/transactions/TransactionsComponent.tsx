@@ -63,8 +63,8 @@ export function TransactionsComponent() {
                                             <td> {transaction.transaction.toAccount}</td>
                                             <td> {transaction.transaction.description}</td>
                                             <td> {transaction.transaction.amount}</td>
-                                            <td> {transaction.transaction.owner.id}</td>
-                                            <td> {transaction.transaction.owner.name}</td>
+                                            <td> {transaction.transaction.owner?.id}</td>
+                                            <td> {transaction.transaction.owner?.name}</td>
                                             <td>
                                                 <Button className="bi bi-pencil" variant='light' onClick={() => handleShow(transaction.transaction.id)}> </Button>
                                                 {/* <i className="bi bi-pencil" ></i> */}

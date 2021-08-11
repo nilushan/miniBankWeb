@@ -1,7 +1,7 @@
 
-// import { useEffect } from 'react';
+
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { ITransactionStateValue, selectTransaction, selectTransactions, updateTransactionsAsync } from './transactionSlice';
+import {  selectTransaction, updateTransactionsAsync } from './transactionSlice';
 import Alert from 'react-bootstrap/Alert';
 import Spinner from 'react-bootstrap/Spinner';
 import Form from 'react-bootstrap/Form';
@@ -22,7 +22,7 @@ export function TransactionViewComponent(props: ITransactionViewProps) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        // console.log( 'useeffect called');
+
     })
 
     const transactionState = useAppSelector((state) => selectTransaction(state, props.transactionId));
@@ -48,6 +48,9 @@ export function TransactionViewComponent(props: ITransactionViewProps) {
 
                 if (formValues[field]) {
                     updatedTransaction[field] = formValues[field]
+                    if( field === 'amount'){
+                        updatedTransaction[field] = parseInt( formValues[field], 10 );
+                    }
                 }
             })
 
@@ -133,7 +136,7 @@ export function TransactionViewComponent(props: ITransactionViewProps) {
                                             <Form.Group as={Row} controlId='transactionOwnerName'>
                                                 <Form.Label column sm="3" > Owner Name</Form.Label>
                                                 <Col sm="9">
-                                                    <Form.Control type="textbox" defaultValue={transaction ? transaction?.owner.name : ''} onChange={e => setFormValue('ownername', e.target.value)} />
+                                                    <Form.Control type="textbox" defaultValue={transaction ? transaction?.owner?.name : ''} onChange={e => setFormValue('ownername', e.target.value)} />
                                                 </Col>
                                             </Form.Group>
 
@@ -141,7 +144,7 @@ export function TransactionViewComponent(props: ITransactionViewProps) {
                                             <Form.Group as={Row} controlId='transactionOwnerId'>
                                                 <Form.Label column sm="3" > Owner Id</Form.Label>
                                                 <Col sm="9">
-                                                    <Form.Control type="textbox" defaultValue={transaction ? transaction?.owner.id : ''} onChange={e => setFormValue('ownerid', e.target.value)} />
+                                                    <Form.Control type="textbox" defaultValue={transaction ? transaction?.owner?.id : ''} onChange={e => setFormValue('ownerid', e.target.value)} />
                                                 </Col>
                                             </Form.Group>
 

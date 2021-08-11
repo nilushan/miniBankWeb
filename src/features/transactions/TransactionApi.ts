@@ -2,28 +2,34 @@ import axios from 'axios';
 
 import { ITransaction } from "./types";
 
+// TODO move to a configuration file
 const BackendBaseURL = 'https://alex-code-test.azurewebsites.net/api'
-// const BackendBaseURL = 'http://localhost:3000/api'
+// const BackendBaseURL = 'https://localhost:5001/api'
+const useTestDate = false;
 
 
 export function fetchTransactions() {
-    return new Promise<ITransaction[]>((resolve, reject) =>
-        // loadTestTransactions(resolve)
+    return new Promise<ITransaction[]>((resolve, reject) => {
 
-        axios(
-            {
-                method: 'get',
-                url: BackendBaseURL + '/transactions',
-                // data: params,
-                headers: { 'content-type': 'application/json', 'charset': 'UTF-8' },
-            }
-        ).then((ret) => {
-            resolve( (ret.data))
+        if (useTestDate) {
+            loadTestTransactions(resolve)
+        } else {
+            axios(
+                {
+                    method: 'get',
+                    url: BackendBaseURL + '/transactions',
+                    // data: params,
+                    headers: { 'content-type': 'application/json', 'charset': 'UTF-8' },
 
-        }).catch(err => {
-            reject(err);
-        })
-    );
+                }
+            ).then((ret) => {
+                resolve((ret.data))
+
+            }).catch(err => {
+                reject(err);
+            })
+        }
+    })
 }
 
 
@@ -117,11 +123,11 @@ export function updateTransaction(id: string, updatedValue: ITransaction) {
             {
                 method: 'put',
                 url: BackendBaseURL + '/transactions/' + id,
-                data: updatedValue,
+                data: JSON.stringify(updatedValue),
                 headers: { 'content-type': 'application/json', 'charset': 'UTF-8' },
             }
         ).then((ret) => {
-            resolve( (ret.data))
+            resolve((ret.data))
 
         }).catch(err => {
             reject(err);

@@ -4,7 +4,7 @@ export interface ITransaction{
     toAccount: string;
     description: string;
     amount: number;
-    date?: Date;
+    date?: number;
     owner: {
       id: string;
       name: string;

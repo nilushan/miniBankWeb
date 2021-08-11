@@ -11,7 +11,7 @@ export function fetchTransactions() {
                     toAccount: "789123",
                     description: "Third transaction description",
                     amount: 98765,
-                    // date: new Date( Date.now()),
+                    date: ( Date.now()),
                     owner: {
                         id: "be9c4f94-0993-4b8f-a9bb-bf3b2ded22bc",
                         name: "Customer 1"
@@ -23,7 +23,7 @@ export function fetchTransactions() {
                     toAccount: "789123",
                     description: "Third transaction description",
                     amount: 1000,
-                    // date: new Date( Date.now()),
+                    date: ( Date.now()),
                     owner: {
                         id: "be9c4f94-0993-4b8f-a9bb-bf3b2ded22bc",
                         name: "Customer 1"
@@ -35,7 +35,7 @@ export function fetchTransactions() {
                     toAccount: "789123",
                     description: "Third transaction description",
                     amount: 2000,
-                    // date: new Date( Date.now()),
+                    date: ( Date.now()),
                     owner: {
                         id: "be9c4f94-0993-4b8f-a9bb-bf3b2ded22bc",
                         name: "Customer 1"

@@ -2,13 +2,15 @@
 import { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { loadTransactionsAsync, selectTransactions } from './transactionSlice';
-import { Table, Spinner, Modal, Button } from 'react-bootstrap';
+import { Table, Spinner, Button } from 'react-bootstrap';
 import { TransactionViewComponent } from './TransactionViewComponent';
 
 export function TransactionsComponent() {
 
     const transactions = useAppSelector(selectTransactions);
     const dispatch = useAppDispatch();
+    // dispatch(loadTransactionsAsync())
+
 
     const [show, setShow] = useState(false);
     const [selectedTransactionId, setTransactionId] = useState("");
@@ -22,7 +24,7 @@ export function TransactionsComponent() {
 
 
     useEffect(() => {
-        if (transactions.list.length === 0) {
+        if (transactions.status === 'init') {
             dispatch(loadTransactionsAsync())
         }
     })

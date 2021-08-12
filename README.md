@@ -1,5 +1,8 @@
 # To Run
 
+Nodejs 10 or later is required. 
+https://nodejs.org/en/download/
+
 ```
 yarn install
 yarn start

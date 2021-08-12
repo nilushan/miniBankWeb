@@ -33,6 +33,13 @@ Redux is used via the reduxjs toolkit https://redux-toolkit.js.org/tutorials/typ
 ![Create API](/files/images/miniBankWebTransactionEdited.png)
 
 
+# Todo
+- Create Transaction Page
+- Validate Update Transaction Page 
+- API call failures
+-- Display Error details when a api fails. 
+-- Revert the form values to the values in the redux store. 
+
 # Documentation from Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.

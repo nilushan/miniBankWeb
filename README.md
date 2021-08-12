@@ -1,3 +1,25 @@
+# To Run
+
+```
+yarn install
+yarn start
+
+```
+
+# Sample
+
+- List Transactions 
+![Create API](/files/images/miniBankWebTransactions.png)
+
+- Edit Transaction
+![Create API](/files/images/miniBankWebTransactionEdit.png)
+
+- Updated Transaction
+![Create API](/files/images/miniBankWebTransactionEdited.png)
+
+
+# Documentation from Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts

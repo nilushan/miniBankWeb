@@ -6,6 +6,18 @@ yarn start
 
 ```
 
+# Technologies
+
+The web app is created using React Redux and Typescript. It was created using create-react-app using template "redux-typescript"
+
+```
+npx create-react-app my-app --template redux-typescript
+```
+
+Redux is used via the reduxjs toolkit https://redux-toolkit.js.org/tutorials/typescript
+
+
+
 # Sample
 
 - List Transactions 
